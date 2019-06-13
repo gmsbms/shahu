@@ -1,0 +1,300 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>RTW Report - Led_Blink.c</title>
+<style> .LN { font-style: italic; color: #888888 } </style>
+<style> .CT { font-style: italic; color: #117755 } </style>
+<style> .PP { font-style: bold;   color: #992211 } </style>
+<style> .KW { font-style: bold;   color: #112266 } </style>
+<style> .DT { font-style: bold;   color: #112266 } </style>
+<link rel="stylesheet" type="text/css" href="rtwreport.css"></link><script language="JavaScript" type="text/javascript" src="rtwreport_utils.js"></script>
+<SCRIPT type="text/javascript" src="rtwannotate.js"></SCRIPT>
+</head>
+<body bgcolor="#eeeeee" text="#1122aa" onload="try {if (top) { if (top.rtwFileOnLoad) top.rtwFileOnLoad(window.document); else local_onload();}} catch(err) {};if (typeof rtwannotate === 'function') {rtwannotate('Led_Blink_c_cov.xml');}">
+<p>
+<table border="0" cellspacing="0" cellpadding="6" width="100%%" height="100%%"><tr><td width="100%%" valign="top" bgcolor="#ffffff">
+<h4>File: <a href="../Led_Blink.c" target="rtwreport_document_frame" id="linkToText_plain">Led_Blink.c</a></h4>
+<pre id="RTWcode">
+<span><a class="LN" name="1">    1   </a><span class="CT">/*</span>
+</span><span><a class="LN" name="2">    2   </a><span class="CT"> * Led_Blink.c</span>
+</span><span><a class="LN" name="3">    3   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="4">    4   </a><span class="CT"> * Code generation for model "Led_Blink".</span>
+</span><span><a class="LN" name="5">    5   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="6">    6   </a><span class="CT"> * Model version              : 1.14</span>
+</span><span><a class="LN" name="7">    7   </a><span class="CT"> * Simulink Coder version : 8.4 (R2013a) 13-Feb-2013</span>
+</span><span><a class="LN" name="8">    8   </a><span class="CT"> * C source code generated on : Wed Jun 12 12:51:11 2019</span>
+</span><span><a class="LN" name="9">    9   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="10">   10   </a><span class="CT"> * Target selection: grt.tlc</span>
+</span><span><a class="LN" name="11">   11   </a><span class="CT"> * Note: GRT includes extra infrastructure and instrumentation for prototyping</span>
+</span><span><a class="LN" name="12">   12   </a><span class="CT"> * Embedded hardware selection: ARM Compatible-&gt;ARM Cortex</span>
+</span><span><a class="LN" name="13">   13   </a><span class="CT"> * Code generation objective: Debugging</span>
+</span><span><a class="LN" name="14">   14   </a><span class="CT"> * Validation result: Not run</span>
+</span><span><a class="LN" name="15">   15   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="16">   16   </a><font color="#992211">#</font><span class="PP">include</span> <font color="#992211">&quot;Led_Blink.h&quot;</font>
+</span><span><a class="LN" name="17">   17   </a><font color="#992211">#</font><span class="PP">include</span> <font color="#992211">&quot;Led_Blink_private.h&quot;</font>
+</span><span><a class="LN" name="18">   18   </a>
+</span><span><a class="LN" name="19">   19   </a><span class="CT">/* Named constants for Chart: '&lt;S1&gt;/Chart' */</span>
+</span><span><a class="LN" name="20">   20   </a><font color="#992211">#</font><span class="PP">define</span> Led_Blink_IN_NO_ACTIVE_CHILD   ((uint8_T)0U)
+</span><span><a class="LN" name="21">   21   </a><font color="#992211">#</font><span class="PP">define</span> Led_Blink_IN_OFF               ((uint8_T)1U)
+</span><span><a class="LN" name="22">   22   </a><font color="#992211">#</font><span class="PP">define</span> Led_Blink_IN_ON                ((uint8_T)2U)
+</span><span><a class="LN" name="23">   23   </a>
+</span><span><a class="LN" name="24">   24   </a><span class="CT">/* Block states (auto storage) */</span>
+</span><span><a class="LN" name="25">   25   </a><a href="Led_Blink_h.html#type_DW_Led_Blink_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_DW_Led_Blink_T');" target="rtwreport_document_frame"><font color="#1122aa">DW_Led_Blink_T</font></a> <a name="var_Led_Blink_DW">Led_Blink_DW</a>;
+</span><span><a class="LN" name="26">   26   </a>
+</span><span><a class="LN" name="27">   27   </a><span class="CT">/* External inputs (root inport signals with auto storage) */</span>
+</span><span><a class="LN" name="28">   28   </a><a href="Led_Blink_h.html#type_ExtU_Led_Blink_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_ExtU_Led_Blink_T');" target="rtwreport_document_frame"><font color="#1122aa">ExtU_Led_Blink_T</font></a> <a name="var_Led_Blink_U">Led_Blink_U</a>;
+</span><span><a class="LN" name="29">   29   </a>
+</span><span><a class="LN" name="30">   30   </a><span class="CT">/* External outputs (root outports fed by signals with auto storage) */</span>
+</span><span><a class="LN" name="31">   31   </a><a href="Led_Blink_h.html#type_ExtY_Led_Blink_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_ExtY_Led_Blink_T');" target="rtwreport_document_frame"><font color="#1122aa">ExtY_Led_Blink_T</font></a> <a name="var_Led_Blink_Y">Led_Blink_Y</a>;
+</span><span><a class="LN" name="32">   32   </a>
+</span><span><a class="LN" name="33">   33   </a><span class="CT">/* Real-time model */</span>
+</span><span><a class="LN" name="34">   34   </a><a href="Led_Blink_types_h.html#type_RT_MODEL_Led_Blink_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_RT_MODEL_Led_Blink_T');" target="rtwreport_document_frame"><font color="#1122aa">RT_MODEL_Led_Blink_T</font></a> <a name="var_Led_Blink_M_">Led_Blink_M_</a>;
+</span><span><a class="LN" name="35">   35   </a><a href="Led_Blink_types_h.html#type_RT_MODEL_Led_Blink_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_RT_MODEL_Led_Blink_T');" target="rtwreport_document_frame"><font color="#1122aa">RT_MODEL_Led_Blink_T</font></a> *<span class="DT">const</span> <a name="var_Led_Blink_M">Led_Blink_M</a> = &amp;<a href="#var_Led_Blink_M_" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M_');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M_</font></a>;
+</span><span><a class="LN" name="36">   36   </a>
+</span><span><a class="LN" name="37">   37   </a><span class="CT">/* Model step function */</span>
+</span><span><a class="LN" name="38">   38   </a><span class="DT">void</span> <a name="fcn_Led_Blink_step">Led_Blink_step</a>(<span class="DT">void</span>)
+</span><span><a class="LN" name="39">   39   </a><b>{</b>
+</span><span><a class="LN" name="40">   40   </a>  <span class="CT">/* Outputs for Atomic SubSystem: '&lt;Root&gt;/Subsystem' */</span>
+</span><span><a class="LN" name="41">   41   </a>  <span class="CT">/* Chart: '&lt;S1&gt;/Chart' incorporates:</span>
+</span><span><a class="LN" name="42">   42   </a><span class="CT">   *  Inport: '&lt;Root&gt;/butPin'</span>
+</span><span><a class="LN" name="43">   43   </a><span class="CT">   */</span>
+</span><span><a class="LN" name="44">   44   </a>  <span class="CT">/* Gateway: Subsystem/Chart */</span>
+</span><span><a class="LN" name="45">   45   </a>  <span class="CT">/* During: Subsystem/Chart */</span>
+</span><span><a class="LN" name="46">   46   </a>  <span class="KW">if</span> (<a href="#var_Led_Blink_DW" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_DW');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_DW</font></a>.is_active_c1_Led_Blink == 0U) <b>{</b>
+</span><span><a class="LN" name="47">   47   </a>    <span class="CT">/* Entry: Subsystem/Chart */</span>
+</span><span><a class="LN" name="48">   48   </a>    <a href="#var_Led_Blink_DW" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_DW');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_DW</font></a>.is_active_c1_Led_Blink = 1U;
+</span><span><a class="LN" name="49">   49   </a>
+</span><span><a class="LN" name="50">   50   </a>    <span class="CT">/* Entry Internal: Subsystem/Chart */</span>
+</span><span><a class="LN" name="51">   51   </a>    <span class="CT">/* Transition: '&lt;S2&gt;:3' */</span>
+</span><span><a class="LN" name="52">   52   </a>    <a href="#var_Led_Blink_DW" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_DW');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_DW</font></a>.is_c1_Led_Blink = Led_Blink_IN_ON;
+</span><span><a class="LN" name="53">   53   </a>
+</span><span><a class="LN" name="54">   54   </a>    <span class="CT">/* Outport: '&lt;Root&gt;/out' */</span>
+</span><span><a class="LN" name="55">   55   </a>    <span class="CT">/* Entry 'ON': '&lt;S2&gt;:1' */</span>
+</span><span><a class="LN" name="56">   56   </a>    <a href="#var_Led_Blink_Y" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_Y');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_Y</font></a>.out = 1.0;
+</span><span><a class="LN" name="57">   57   </a>    printf(<font color="#1122ff">&quot;LED_ON\\r\\n&quot;</font>);
+</span><span><a class="LN" name="58">   58   </a>  <b>}</b> <span class="KW">else</span> <span class="KW">if</span> (<a href="#var_Led_Blink_DW" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_DW');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_DW</font></a>.is_c1_Led_Blink == Led_Blink_IN_OFF) <b>{</b>
+</span><span><a class="LN" name="59">   59   </a>    <span class="CT">/* During 'OFF': '&lt;S2&gt;:2' */</span>
+</span><span><a class="LN" name="60">   60   </a>    <span class="KW">if</span> (<a href="#var_Led_Blink_U" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_U');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_U</font></a>.butPin == 1.0) <b>{</b>
+</span><span><a class="LN" name="61">   61   </a>      <span class="CT">/* Transition: '&lt;S2&gt;:4' */</span>
+</span><span><a class="LN" name="62">   62   </a>      <span class="CT">/* LED_on */</span>
+</span><span><a class="LN" name="63">   63   </a>      <a href="#var_Led_Blink_DW" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_DW');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_DW</font></a>.is_c1_Led_Blink = Led_Blink_IN_ON;
+</span><span><a class="LN" name="64">   64   </a>
+</span><span><a class="LN" name="65">   65   </a>      <span class="CT">/* Outport: '&lt;Root&gt;/out' */</span>
+</span><span><a class="LN" name="66">   66   </a>      <span class="CT">/* Entry 'ON': '&lt;S2&gt;:1' */</span>
+</span><span><a class="LN" name="67">   67   </a>      <a href="#var_Led_Blink_Y" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_Y');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_Y</font></a>.out = 1.0;
+</span><span><a class="LN" name="68">   68   </a>      printf(<font color="#1122ff">&quot;LED_ON\\r\\n&quot;</font>);
+</span><span><a class="LN" name="69">   69   </a>    <b>}</b>
+</span><span><a class="LN" name="70">   70   </a>  <b>}</b> <span class="KW">else</span> <b>{</b>
+</span><span><a class="LN" name="71">   71   </a>    <span class="CT">/* During 'ON': '&lt;S2&gt;:1' */</span>
+</span><span><a class="LN" name="72">   72   </a>    <span class="KW">if</span> (<a href="#var_Led_Blink_U" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_U');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_U</font></a>.butPin == 0.0) <b>{</b>
+</span><span><a class="LN" name="73">   73   </a>      <span class="CT">/* Transition: '&lt;S2&gt;:5' */</span>
+</span><span><a class="LN" name="74">   74   </a>      <span class="CT">/* LED_off */</span>
+</span><span><a class="LN" name="75">   75   </a>      <a href="#var_Led_Blink_DW" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_DW');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_DW</font></a>.is_c1_Led_Blink = Led_Blink_IN_OFF;
+</span><span><a class="LN" name="76">   76   </a>
+</span><span><a class="LN" name="77">   77   </a>      <span class="CT">/* Outport: '&lt;Root&gt;/out' */</span>
+</span><span><a class="LN" name="78">   78   </a>      <span class="CT">/* Entry 'OFF': '&lt;S2&gt;:2' */</span>
+</span><span><a class="LN" name="79">   79   </a>      <a href="#var_Led_Blink_Y" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_Y');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_Y</font></a>.out = 0.0;
+</span><span><a class="LN" name="80">   80   </a>      printf(<font color="#1122ff">&quot;LED_OFF\\r\\n&quot;</font>);
+</span><span><a class="LN" name="81">   81   </a>    <b>}</b>
+</span><span><a class="LN" name="82">   82   </a>  <b>}</b>
+</span><span><a class="LN" name="83">   83   </a>
+</span><span><a class="LN" name="84">   84   </a>  <span class="CT">/* End of Chart: '&lt;S1&gt;/Chart' */</span>
+</span><span><a class="LN" name="85">   85   </a>  <span class="CT">/* End of Outputs for SubSystem: '&lt;Root&gt;/Subsystem' */</span>
+</span><span><a class="LN" name="86">   86   </a>
+</span><span><a class="LN" name="87">   87   </a>  <span class="CT">/* Matfile logging */</span>
+</span><span><a class="LN" name="88">   88   </a>  <a href="rt_logging_c.html#fcn_rt_UpdateTXYLogVars" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_rt_UpdateTXYLogVars');" target="rtwreport_document_frame"><font color="#1122aa">rt_UpdateTXYLogVars</font></a>(<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;rtwLogInfo, (&amp;<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;Timing.taskTime0));
+</span><span><a class="LN" name="89">   89   </a>
+</span><span><a class="LN" name="90">   90   </a>  <span class="CT">/* signal main to stop simulation */</span>
+</span><span><a class="LN" name="91">   91   </a>  <b>{</b>                                    <span class="CT">/* Sample time: [0.01s, 0.0s] */</span>
+</span><span><a class="LN" name="92">   92   </a>    <span class="KW">if</span> ((rtmGetTFinal(<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>)!=-1) &amp;&amp;
+</span><span><a class="LN" name="93">   93   </a>        !((rtmGetTFinal(<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>)-<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;Timing.taskTime0) &gt;
+</span><span><a class="LN" name="94">   94   </a>          <a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;Timing.taskTime0 * (DBL_EPSILON))) <b>{</b>
+</span><span><a class="LN" name="95">   95   </a>      rtmSetErrorStatus(<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>, <font color="#1122ff">&quot;Simulation finished&quot;</font>);
+</span><span><a class="LN" name="96">   96   </a>    <b>}</b>
+</span><span><a class="LN" name="97">   97   </a>  <b>}</b>
+</span><span><a class="LN" name="98">   98   </a>
+</span><span><a class="LN" name="99">   99   </a>  <span class="CT">/* Update absolute time for base rate */</span>
+</span><span><a class="LN" name="100">  100   </a>  <span class="CT">/* The "clockTick0" counts the number of times the code of this task has</span>
+</span><span><a class="LN" name="101">  101   </a><span class="CT">   * been executed. The absolute time is the multiplication of "clockTick0"</span>
+</span><span><a class="LN" name="102">  102   </a><span class="CT">   * and "Timing.stepSize0". Size of "clockTick0" ensures timer will not</span>
+</span><span><a class="LN" name="103">  103   </a><span class="CT">   * overflow during the application lifespan selected.</span>
+</span><span><a class="LN" name="104">  104   </a><span class="CT">   * Timer of this task consists of two 32 bit unsigned integers.</span>
+</span><span><a class="LN" name="105">  105   </a><span class="CT">   * The two integers represent the low bits Timing.clockTick0 and the high bits</span>
+</span><span><a class="LN" name="106">  106   </a><span class="CT">   * Timing.clockTickH0. When the low bit overflows to 0, the high bits increment.</span>
+</span><span><a class="LN" name="107">  107   </a><span class="CT">   */</span>
+</span><span><a class="LN" name="108">  108   </a>  <span class="KW">if</span> (!(++<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;Timing.clockTick0)) <b>{</b>
+</span><span><a class="LN" name="109">  109   </a>    ++<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;Timing.clockTickH0;
+</span><span><a class="LN" name="110">  110   </a>  <b>}</b>
+</span><span><a class="LN" name="111">  111   </a>
+</span><span><a class="LN" name="112">  112   </a>  <a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;Timing.taskTime0 = <a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;Timing.clockTick0 *
+</span><span><a class="LN" name="113">  113   </a>    <a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;Timing.stepSize0 + <a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;Timing.clockTickH0 *
+</span><span><a class="LN" name="114">  114   </a>    <a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;Timing.stepSize0 * 4294967296.0;
+</span><span><a class="LN" name="115">  115   </a><b>}</b>
+</span><span><a class="LN" name="116">  116   </a>
+</span><span><a class="LN" name="117">  117   </a><span class="CT">/* Model initialize function */</span>
+</span><span><a class="LN" name="118">  118   </a><span class="DT">void</span> <a name="fcn_Led_Blink_initialize">Led_Blink_initialize</a>(<span class="DT">void</span>)
+</span><span><a class="LN" name="119">  119   </a><b>{</b>
+</span><span><a class="LN" name="120">  120   </a>  <span class="CT">/* Registration code */</span>
+</span><span><a class="LN" name="121">  121   </a>
+</span><span><a class="LN" name="122">  122   </a>  <span class="CT">/* initialize non-finites */</span>
+</span><span><a class="LN" name="123">  123   </a>  <a href="rt_nonfinite_c.html#fcn_rt_InitInfAndNaN" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_rt_InitInfAndNaN');" target="rtwreport_document_frame"><font color="#1122aa">rt_InitInfAndNaN</font></a>(<span class="KW">sizeof</span>(real_T));
+</span><span><a class="LN" name="124">  124   </a>
+</span><span><a class="LN" name="125">  125   </a>  <span class="CT">/* initialize real-time model */</span>
+</span><span><a class="LN" name="126">  126   </a>  (<span class="DT">void</span>) memset((<span class="DT">void</span> *)<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>, 0,
+</span><span><a class="LN" name="127">  127   </a>                <span class="KW">sizeof</span>(<a href="Led_Blink_types_h.html#type_RT_MODEL_Led_Blink_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_RT_MODEL_Led_Blink_T');" target="rtwreport_document_frame"><font color="#1122aa">RT_MODEL_Led_Blink_T</font></a>));
+</span><span><a class="LN" name="128">  128   </a>  rtmSetTFinal(<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>, -1);
+</span><span><a class="LN" name="129">  129   </a>  <a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;Timing.stepSize0 = 0.01;
+</span><span><a class="LN" name="130">  130   </a>
+</span><span><a class="LN" name="131">  131   </a>  <span class="CT">/* Setup for data logging */</span>
+</span><span><a class="LN" name="132">  132   </a>  <b>{</b>
+</span><span><a class="LN" name="133">  133   </a>    <span class="DT">static</span> RTWLogInfo rt_DataLoggingInfo;
+</span><span><a class="LN" name="134">  134   </a>    <a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;rtwLogInfo = &amp;rt_DataLoggingInfo;
+</span><span><a class="LN" name="135">  135   </a>  <b>}</b>
+</span><span><a class="LN" name="136">  136   </a>
+</span><span><a class="LN" name="137">  137   </a>  <span class="CT">/* Setup for data logging */</span>
+</span><span><a class="LN" name="138">  138   </a>  <b>{</b>
+</span><span><a class="LN" name="139">  139   </a>    rtliSetLogXSignalInfo(<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;rtwLogInfo, (NULL));
+</span><span><a class="LN" name="140">  140   </a>    rtliSetLogXSignalPtrs(<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;rtwLogInfo, (NULL));
+</span><span><a class="LN" name="141">  141   </a>    rtliSetLogT(<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;rtwLogInfo, <font color="#1122ff">&quot;tout&quot;</font>);
+</span><span><a class="LN" name="142">  142   </a>    rtliSetLogX(<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;rtwLogInfo, <font color="#1122ff">&quot;&quot;</font>);
+</span><span><a class="LN" name="143">  143   </a>    rtliSetLogXFinal(<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;rtwLogInfo, <font color="#1122ff">&quot;&quot;</font>);
+</span><span><a class="LN" name="144">  144   </a>    rtliSetSigLog(<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;rtwLogInfo, <font color="#1122ff">&quot;&quot;</font>);
+</span><span><a class="LN" name="145">  145   </a>    rtliSetLogVarNameModifier(<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;rtwLogInfo, <font color="#1122ff">&quot;rt_&quot;</font>);
+</span><span><a class="LN" name="146">  146   </a>    rtliSetLogFormat(<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;rtwLogInfo, 0);
+</span><span><a class="LN" name="147">  147   </a>    rtliSetLogMaxRows(<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;rtwLogInfo, 1000);
+</span><span><a class="LN" name="148">  148   </a>    rtliSetLogDecimation(<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;rtwLogInfo, 1);
+</span><span><a class="LN" name="149">  149   </a>
+</span><span><a class="LN" name="150">  150   </a>    <span class="CT">/*</span>
+</span><span><a class="LN" name="151">  151   </a><span class="CT">     * Set pointers to the data and signal info for each output</span>
+</span><span><a class="LN" name="152">  152   </a><span class="CT">     */</span>
+</span><span><a class="LN" name="153">  153   </a>    <b>{</b>
+</span><span><a class="LN" name="154">  154   </a>      <span class="DT">static</span> <span class="DT">void</span> * rt_LoggedOutputSignalPtrs[] = <b>{</b>
+</span><span><a class="LN" name="155">  155   </a>        &amp;<a href="#var_Led_Blink_Y" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_Y');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_Y</font></a>.out
+</span><span><a class="LN" name="156">  156   </a>      <b>}</b>;
+</span><span><a class="LN" name="157">  157   </a>
+</span><span><a class="LN" name="158">  158   </a>      rtliSetLogYSignalPtrs(<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;rtwLogInfo, ((LogSignalPtrsType)
+</span><span><a class="LN" name="159">  159   </a>        rt_LoggedOutputSignalPtrs));
+</span><span><a class="LN" name="160">  160   </a>    <b>}</b>
+</span><span><a class="LN" name="161">  161   </a>
+</span><span><a class="LN" name="162">  162   </a>    <b>{</b>
+</span><span><a class="LN" name="163">  163   </a>      <span class="DT">static</span> int_T rt_LoggedOutputWidths[] = <b>{</b>
+</span><span><a class="LN" name="164">  164   </a>        1
+</span><span><a class="LN" name="165">  165   </a>      <b>}</b>;
+</span><span><a class="LN" name="166">  166   </a>
+</span><span><a class="LN" name="167">  167   </a>      <span class="DT">static</span> int_T rt_LoggedOutputNumDimensions[] = <b>{</b>
+</span><span><a class="LN" name="168">  168   </a>        1
+</span><span><a class="LN" name="169">  169   </a>      <b>}</b>;
+</span><span><a class="LN" name="170">  170   </a>
+</span><span><a class="LN" name="171">  171   </a>      <span class="DT">static</span> int_T rt_LoggedOutputDimensions[] = <b>{</b>
+</span><span><a class="LN" name="172">  172   </a>        1
+</span><span><a class="LN" name="173">  173   </a>      <b>}</b>;
+</span><span><a class="LN" name="174">  174   </a>
+</span><span><a class="LN" name="175">  175   </a>      <span class="DT">static</span> boolean_T rt_LoggedOutputIsVarDims[] = <b>{</b>
+</span><span><a class="LN" name="176">  176   </a>        0
+</span><span><a class="LN" name="177">  177   </a>      <b>}</b>;
+</span><span><a class="LN" name="178">  178   </a>
+</span><span><a class="LN" name="179">  179   </a>      <span class="DT">static</span> <span class="DT">void</span>* rt_LoggedCurrentSignalDimensions[] = <b>{</b>
+</span><span><a class="LN" name="180">  180   </a>        (NULL)
+</span><span><a class="LN" name="181">  181   </a>      <b>}</b>;
+</span><span><a class="LN" name="182">  182   </a>
+</span><span><a class="LN" name="183">  183   </a>      <span class="DT">static</span> int_T rt_LoggedCurrentSignalDimensionsSize[] = <b>{</b>
+</span><span><a class="LN" name="184">  184   </a>        4
+</span><span><a class="LN" name="185">  185   </a>      <b>}</b>;
+</span><span><a class="LN" name="186">  186   </a>
+</span><span><a class="LN" name="187">  187   </a>      <span class="DT">static</span> BuiltInDTypeId rt_LoggedOutputDataTypeIds[] = <b>{</b>
+</span><span><a class="LN" name="188">  188   </a>        SS_DOUBLE
+</span><span><a class="LN" name="189">  189   </a>      <b>}</b>;
+</span><span><a class="LN" name="190">  190   </a>
+</span><span><a class="LN" name="191">  191   </a>      <span class="DT">static</span> int_T rt_LoggedOutputComplexSignals[] = <b>{</b>
+</span><span><a class="LN" name="192">  192   </a>        0
+</span><span><a class="LN" name="193">  193   </a>      <b>}</b>;
+</span><span><a class="LN" name="194">  194   </a>
+</span><span><a class="LN" name="195">  195   </a>      <span class="DT">static</span> <span class="DT">const</span> char_T *rt_LoggedOutputLabels[] = <b>{</b>
+</span><span><a class="LN" name="196">  196   </a>        <font color="#1122ff">&quot;&quot;</font> <b>}</b>;
+</span><span><a class="LN" name="197">  197   </a>
+</span><span><a class="LN" name="198">  198   </a>      <span class="DT">static</span> <span class="DT">const</span> char_T *rt_LoggedOutputBlockNames[] = <b>{</b>
+</span><span><a class="LN" name="199">  199   </a>        <font color="#1122ff">&quot;Led_Blink/out&quot;</font> <b>}</b>;
+</span><span><a class="LN" name="200">  200   </a>
+</span><span><a class="LN" name="201">  201   </a>      <span class="DT">static</span> RTWLogDataTypeConvert rt_RTWLogDataTypeConvert[] = <b>{</b>
+</span><span><a class="LN" name="202">  202   </a>        <b>{</b> 0, SS_DOUBLE, SS_DOUBLE, 0, 0, 0, 1.0, 0, 0.0 <b>}</b>
+</span><span><a class="LN" name="203">  203   </a>      <b>}</b>;
+</span><span><a class="LN" name="204">  204   </a>
+</span><span><a class="LN" name="205">  205   </a>      <span class="DT">static</span> RTWLogSignalInfo rt_LoggedOutputSignalInfo[] = <b>{</b>
+</span><span><a class="LN" name="206">  206   </a>        <b>{</b>
+</span><span><a class="LN" name="207">  207   </a>          1,
+</span><span><a class="LN" name="208">  208   </a>          rt_LoggedOutputWidths,
+</span><span><a class="LN" name="209">  209   </a>          rt_LoggedOutputNumDimensions,
+</span><span><a class="LN" name="210">  210   </a>          rt_LoggedOutputDimensions,
+</span><span><a class="LN" name="211">  211   </a>          rt_LoggedOutputIsVarDims,
+</span><span><a class="LN" name="212">  212   </a>          rt_LoggedCurrentSignalDimensions,
+</span><span><a class="LN" name="213">  213   </a>          rt_LoggedCurrentSignalDimensionsSize,
+</span><span><a class="LN" name="214">  214   </a>          rt_LoggedOutputDataTypeIds,
+</span><span><a class="LN" name="215">  215   </a>          rt_LoggedOutputComplexSignals,
+</span><span><a class="LN" name="216">  216   </a>          (NULL),
+</span><span><a class="LN" name="217">  217   </a>
+</span><span><a class="LN" name="218">  218   </a>          <b>{</b> rt_LoggedOutputLabels <b>}</b>,
+</span><span><a class="LN" name="219">  219   </a>          (NULL),
+</span><span><a class="LN" name="220">  220   </a>          (NULL),
+</span><span><a class="LN" name="221">  221   </a>          (NULL),
+</span><span><a class="LN" name="222">  222   </a>
+</span><span><a class="LN" name="223">  223   </a>          <b>{</b> rt_LoggedOutputBlockNames <b>}</b>,
+</span><span><a class="LN" name="224">  224   </a>
+</span><span><a class="LN" name="225">  225   </a>          <b>{</b> (NULL) <b>}</b>,
+</span><span><a class="LN" name="226">  226   </a>          (NULL),
+</span><span><a class="LN" name="227">  227   </a>          rt_RTWLogDataTypeConvert
+</span><span><a class="LN" name="228">  228   </a>        <b>}</b>
+</span><span><a class="LN" name="229">  229   </a>      <b>}</b>;
+</span><span><a class="LN" name="230">  230   </a>
+</span><span><a class="LN" name="231">  231   </a>      rtliSetLogYSignalInfo(<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;rtwLogInfo, rt_LoggedOutputSignalInfo);
+</span><span><a class="LN" name="232">  232   </a>
+</span><span><a class="LN" name="233">  233   </a>      <span class="CT">/* set currSigDims field */</span>
+</span><span><a class="LN" name="234">  234   </a>      rt_LoggedCurrentSignalDimensions[0] = &amp;rt_LoggedOutputWidths[0];
+</span><span><a class="LN" name="235">  235   </a>    <b>}</b>
+</span><span><a class="LN" name="236">  236   </a>
+</span><span><a class="LN" name="237">  237   </a>    rtliSetLogY(<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;rtwLogInfo, <font color="#1122ff">&quot;yout&quot;</font>);
+</span><span><a class="LN" name="238">  238   </a>  <b>}</b>
+</span><span><a class="LN" name="239">  239   </a>
+</span><span><a class="LN" name="240">  240   </a>  <span class="CT">/* states (dwork) */</span>
+</span><span><a class="LN" name="241">  241   </a>  (<span class="DT">void</span>) memset((<span class="DT">void</span> *)&amp;<a href="#var_Led_Blink_DW" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_DW');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_DW</font></a>, 0,
+</span><span><a class="LN" name="242">  242   </a>                <span class="KW">sizeof</span>(<a href="Led_Blink_h.html#type_DW_Led_Blink_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_DW_Led_Blink_T');" target="rtwreport_document_frame"><font color="#1122aa">DW_Led_Blink_T</font></a>));
+</span><span><a class="LN" name="243">  243   </a>
+</span><span><a class="LN" name="244">  244   </a>  <span class="CT">/* external inputs */</span>
+</span><span><a class="LN" name="245">  245   </a>  <a href="#var_Led_Blink_U" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_U');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_U</font></a>.butPin = 0.0;
+</span><span><a class="LN" name="246">  246   </a>
+</span><span><a class="LN" name="247">  247   </a>  <span class="CT">/* external outputs */</span>
+</span><span><a class="LN" name="248">  248   </a>  <a href="#var_Led_Blink_Y" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_Y');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_Y</font></a>.out = 0.0;
+</span><span><a class="LN" name="249">  249   </a>
+</span><span><a class="LN" name="250">  250   </a>  <span class="CT">/* Matfile logging */</span>
+</span><span><a class="LN" name="251">  251   </a>  <a href="rt_logging_c.html#fcn_rt_StartDataLoggingWithStartTime" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_rt_StartDataLoggingWithStartTime');" target="rtwreport_document_frame"><font color="#1122aa">rt_StartDataLoggingWithStartTime</font></a>(<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;rtwLogInfo, 0.0, rtmGetTFinal
+</span><span><a class="LN" name="252">  252   </a>    (<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>), <a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>-&gt;Timing.stepSize0, (&amp;rtmGetErrorStatus
+</span><span><a class="LN" name="253">  253   </a>    (<a href="#var_Led_Blink_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_M');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_M</font></a>)));
+</span><span><a class="LN" name="254">  254   </a>
+</span><span><a class="LN" name="255">  255   </a>  <span class="CT">/* user code (Initialize function Body) */</span>
+</span><span><a class="LN" name="256">  256   </a>  pinMode (0, OUTPUT) ;
+</span><span><a class="LN" name="257">  257   </a>  pinMode (1, INPUT) ;
+</span><span><a class="LN" name="258">  258   </a>  pullUpDnControl(1, PUD_UP);
+</span><span><a class="LN" name="259">  259   </a>
+</span><span><a class="LN" name="260">  260   </a>  <span class="CT">/* InitializeConditions for Atomic SubSystem: '&lt;Root&gt;/Subsystem' */</span>
+</span><span><a class="LN" name="261">  261   </a>  <span class="CT">/* InitializeConditions for Chart: '&lt;S1&gt;/Chart' */</span>
+</span><span><a class="LN" name="262">  262   </a>  <a href="#var_Led_Blink_DW" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_DW');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_DW</font></a>.is_active_c1_Led_Blink = 0U;
+</span><span><a class="LN" name="263">  263   </a>  <a href="#var_Led_Blink_DW" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_DW');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_DW</font></a>.is_c1_Led_Blink = Led_Blink_IN_NO_ACTIVE_CHILD;
+</span><span><a class="LN" name="264">  264   </a>
+</span><span><a class="LN" name="265">  265   </a>  <span class="CT">/* InitializeConditions for Outport: '&lt;Root&gt;/out' incorporates:</span>
+</span><span><a class="LN" name="266">  266   </a><span class="CT">   *  InitializeConditions for Chart: '&lt;S1&gt;/Chart'</span>
+</span><span><a class="LN" name="267">  267   </a><span class="CT">   */</span>
+</span><span><a class="LN" name="268">  268   </a>  <a href="#var_Led_Blink_Y" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Led_Blink_Y');" target="rtwreport_document_frame"><font color="#1122aa">Led_Blink_Y</font></a>.out = 0.0;
+</span><span><a class="LN" name="269">  269   </a>
+</span><span><a class="LN" name="270">  270   </a>  <span class="CT">/* End of InitializeConditions for SubSystem: '&lt;Root&gt;/Subsystem' */</span>
+</span><span><a class="LN" name="271">  271   </a><b>}</b>
+</span><span><a class="LN" name="272">  272   </a>
+</span><span><a class="LN" name="273">  273   </a><span class="CT">/* Model terminate function */</span>
+</span><span><a class="LN" name="274">  274   </a><span class="DT">void</span> <a name="fcn_Led_Blink_terminate">Led_Blink_terminate</a>(<span class="DT">void</span>)
+</span><span><a class="LN" name="275">  275   </a><b>{</b>
+</span><span><a class="LN" name="276">  276   </a>  <span class="CT">/* (no terminate code required) */</span>
+</span><span><a class="LN" name="277">  277   </a><b>}</b>
+</span><span><a class="LN" name="278">  278   </a>
+</span></pre>
+</td></tr></table>
+</p>
+</body>
+</html>
